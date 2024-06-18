@@ -60,7 +60,8 @@ ENV CCC "clang++"
 # warning, to allow compiling legacy code.
 # See https://releases.llvm.org/16.0.0/tools/clang/docs/ReleaseNotes.html#potentially-breaking-changes
 # Same for deprecated-declarations, int-conversion,
-# incompatible-function-pointer-types, enum-constexpr-conversion
+# incompatible-function-pointer-types, enum-constexpr-conversion,
+# vla-cxx-extension
 
 ENV CFLAGS -O1 \
     -fno-omit-frame-pointer \
@@ -71,6 +72,7 @@ ENV CFLAGS -O1 \
     -Wno-error=deprecated-declarations \
     -Wno-error=implicit-function-declaration \
     -Wno-error=implicit-int \
+    -Wno-error=vla-cxx-extension \
     -DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION
 ENV CXXFLAGS_EXTRA "-stdlib=libc++"
 ENV CXXFLAGS "$CFLAGS $CXXFLAGS_EXTRA"
