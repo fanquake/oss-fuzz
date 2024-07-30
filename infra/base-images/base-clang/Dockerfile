@@ -62,6 +62,15 @@ ENV CCC "clang++"
 # Same for deprecated-declarations, int-conversion,
 # incompatible-function-pointer-types, enum-constexpr-conversion
 
-ENV CFLAGS "-O1 -fno-omit-frame-pointer -gline-tables-only -Wno-error=enum-constexpr-conversion -Wno-error=incompatible-function-pointer-types -Wno-error=int-conversion -Wno-error=deprecated-declarations -Wno-error=implicit-function-declaration -Wno-error=implicit-int -DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION"
+ENV CFLAGS -O1 \
+    -fno-omit-frame-pointer \
+    -gline-tables-only \
+    -Wno-error=enum-constexpr-conversion \
+    -Wno-error=incompatible-function-pointer-types \
+    -Wno-error=int-conversion \
+    -Wno-error=deprecated-declarations \
+    -Wno-error=implicit-function-declaration \
+    -Wno-error=implicit-int \
+    -DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION
 ENV CXXFLAGS_EXTRA "-stdlib=libc++"
 ENV CXXFLAGS "$CFLAGS $CXXFLAGS_EXTRA"
