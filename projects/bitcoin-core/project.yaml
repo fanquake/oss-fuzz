@@ -1,5 +1,6 @@
 homepage: "https://bitcoincore.org/"
 main_repo: 'https://github.com/bitcoin/bitcoin.git'
+base_os_version: ubuntu-24-04
 language: c++
 primary_contact: "macro.fuzzing.uxuga@aleeas.com"
 auto_ccs:
